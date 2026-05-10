@@ -87,6 +87,44 @@
       z-index: 10;
     }
 
+    .cover-page {
+      background: linear-gradient(135deg, #eff6ff, #ffffff);
+      border: 1px solid #d9e4f5;
+    }
+
+    .cover-title {
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      letter-spacing: 0.02em;
+    }
+
+    .cover-meta {
+      letter-spacing: 0.05em;
+    }
+
+    .page-break {
+      break-after: page;
+      page-break-after: always;
+    }
+
+    .toc-section .toc-list {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .numbered-steps li {
+      list-style: decimal inside;
+    }
+
+    .tip-card {
+      border-left: 4px solid #0d6efd;
+      background: #f1f7ff;
+    }
+
+    .screenshot-grid figcaption {
+      font-size: 0.85rem;
+      color: #6c757d;
+      margin-top: 0.5rem;
+    }
+
     @media (max-width: 991px) {
       .book-columns {
         column-count: 1;
@@ -130,12 +168,12 @@
 <body>
   <div class="container py-4 py-lg-5">
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-4 no-print">
-      <div>
-        <p class="text-uppercase text-primary fw-bold mb-2 small">User Manual</p>
-        <h1 class="display-6 mb-2">Document Tracking & Archiving System</h1>
-        <p class="text-secondary mb-0">This guide is redesigned to match an enterprise-style manual with clear
-          workflows, role-based guidance, and step-by-step screenshots.</p>
-      </div>
+        <div>
+          <p class="text-uppercase text-primary fw-bold mb-2 small">User Manual</p>
+          <h1 class="display-6 mb-2">Document Tracking & Archiving System</h1>
+          <p class="text-secondary mb-0">This booklet guide now includes a cover page, table of contents, expanded
+            chapter-by-chapter steps, tips, and a full screenshot reference.</p>
+        </div>
       <div class="d-flex gap-2 flex-wrap">
         <a href="download.php" class="btn btn-primary btn-lg">Download PDF</a>
         <a href="manual.pdf" target="_blank" class="btn btn-outline-secondary btn-lg">Open booklet PDF</a>
@@ -143,13 +181,61 @@
     </div>
 
     <main class="manual p-4 p-lg-5">
+      <section id="cover" class="cover-page p-5 p-lg-5 rounded-4 mb-5 text-center page-break">
+        <p class="text-uppercase text-primary fw-semibold cover-meta mb-2">Booklet Guide</p>
+        <h2 class="cover-title fw-bold mb-3">Document Tracking & Archiving System</h2>
+        <p class="text-secondary mb-4">A complete, image-rich manual for onboarding, daily processing, approvals, and
+          long-term archiving.</p>
+        <div class="row g-3 justify-content-center text-start">
+          <div class="col-md-4">
+            <div class="p-3 bg-white border rounded-4 shadow-sm h-100">
+              <p class="small text-muted mb-1">Version</p>
+              <p class="fw-semibold mb-0">v1.0 • May 2026</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-white border rounded-4 shadow-sm h-100">
+              <p class="small text-muted mb-1">Audience</p>
+              <p class="fw-semibold mb-0">Admins, Encoders, Approvers, Viewers</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-white border rounded-4 shadow-sm h-100">
+              <p class="small text-muted mb-1">Purpose</p>
+              <p class="fw-semibold mb-0">Standardize tracking, approvals, and archiving</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-muted mt-4 mb-0">Use this guide during onboarding, refreshers, and audit preparation. Each chapter
+          ends with practical tips and best practices.</p>
+      </section>
+
+      <section id="table-of-contents" class="mb-5 toc-section page-break">
+        <div class="section-header mb-3">
+          <span class="badge bg-primary mb-2">Table of Contents</span>
+          <h2 class="h3 mb-1">Navigate the booklet</h2>
+          <p class="text-muted mb-0">Jump directly to a chapter or review the full workflow from start to finish.</p>
+        </div>
+        <nav class="toc-list">
+          <a href="#overview">Chapter 1: System Overview</a>
+          <a href="#getting-started">Chapter 2: Getting Started</a>
+          <a href="#command-center">Chapter 3: Command Center</a>
+          <a href="#access-management">Chapter 4: Access Management</a>
+          <a href="#repository">Chapter 5: Digital Repository</a>
+          <a href="#workflows">Chapter 6: Intelligent Workflows</a>
+          <a href="#tracking">Chapter 7: Tracking & Compliance</a>
+          <a href="#tips-troubleshooting">Chapter 8: Tips & Troubleshooting</a>
+          <a href="#screenshot-reference">Chapter 9: Screenshot Reference</a>
+        </nav>
+      </section>
+
       <section class="mb-5">
         <div class="row g-4 align-items-center">
           <div class="col-lg-7">
             <div class="p-4 rounded-4 bg-primary bg-opacity-10 h-100">
-              <h2 class="h4 text-primary mb-3">What this manual covers</h2>
-              <p class="mb-3">Use this manual to onboard users and administrators with a complete workflow-based guide
-                from registration to archive.</p>
+              <h2 class="h4 text-primary mb-3">How to use this manual</h2>
+              <p class="mb-3">Follow the chapters in order when onboarding, or jump straight to the task you need. Each
+                chapter pairs screenshots with step-by-step actions and ends with a checklist of tips.</p>
               <ul class="feature-list mb-0">
                 <li><strong>System overview:</strong> purpose, capabilities, and requirements.</li>
                 <li><strong>Getting started:</strong> homepage, registration, and login policies.</li>
@@ -157,6 +243,7 @@
                 <li><strong>Access control:</strong> users, teams, and roles.</li>
                 <li><strong>Digital repository:</strong> categories, upload, search, and document details.</li>
                 <li><strong>Workflows:</strong> sequential/parallel routing and queue management.</li>
+                <li><strong>Tracking:</strong> audit trails, reports, and compliance evidence.</li>
               </ul>
             </div>
           </div>
@@ -164,6 +251,8 @@
             <div class="p-4 rounded-4 bg-white border h-100 shadow-sm">
               <h3 class="h5 mb-3">Quick navigation</h3>
               <nav class="toc-list">
+                <a href="#cover">Cover Page</a>
+                <a href="#table-of-contents">Table of Contents</a>
                 <a href="#overview">1. System Overview</a>
                 <a href="#getting-started">2. Getting Started</a>
                 <a href="#command-center">3. Command Center</a>
@@ -171,6 +260,8 @@
                 <a href="#repository">5. Digital Repository</a>
                 <a href="#workflows">6. Workflows</a>
                 <a href="#tracking">7. Tracking & Compliance</a>
+                <a href="#tips-troubleshooting">8. Tips & Troubleshooting</a>
+                <a href="#screenshot-reference">9. Screenshot Reference</a>
               </nav>
             </div>
           </div>
@@ -188,14 +279,20 @@
           <div class="col-lg-6">
             <div class="section-card p-4 h-100">
               <h3 class="h5">Introduction & Purpose</h3>
-              <p>The system provides a centralized web-based platform for capturing, tracking, and archiving documents.
-                It replaces manual processes with secure digital workflows and improves retrieval, compliance, and
-                collaboration.</p>
-              <ul class="step-list">
-                <li>Track documents from upload to archive.</li>
-                <li>Use OCR to make scanned content searchable.</li>
-                <li>Generate QR codes for physical document tracking.</li>
-              </ul>
+              <p>The system provides a centralized web-based platform for capturing, tracking, and archiving documents
+                so teams can replace manual handoffs with secure digital workflows.</p>
+              <ol class="step-list numbered-steps">
+                <li>Confirm your organization has a supported browser and stable internet connection.</li>
+                <li>Gather organization details (address, logo, admins) for onboarding.</li>
+                <li>List key document types and the teams responsible for approval.</li>
+              </ol>
+              <div class="tip-card p-3 mt-3">
+                <h4 class="h6 text-primary mb-2">Tips</h4>
+                <ul class="step-list mb-0">
+                  <li>Create a shared folder for templates, SOPs, and supporting files.</li>
+                  <li>Decide naming conventions before uploading the first document.</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
@@ -207,7 +304,11 @@
                 <li>Role-based access control and audit logging.</li>
                 <li>Dashboard insights for workflow status and overdue items.</li>
               </ul>
-              <p class="mb-0"><strong>Recommended browsers:</strong> Chrome, Firefox, Edge, Safari.</p>
+              <p class="mb-2"><strong>Recommended browsers:</strong> Chrome, Firefox, Edge, Safari.</p>
+              <ul class="step-list mb-0">
+                <li>Enable pop-ups for PDF previews and export dialogs.</li>
+                <li>Use two-factor authentication if available in your environment.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -229,11 +330,12 @@
             <h3 class="h5">Organization Registration</h3>
             <p>Onboard new organizations with a multi-step registration flow that captures company details,
               administrator data, and subscription preferences.</p>
-            <ol class="step-list">
-              <li>Enter legal organization name, address, and contact details.</li>
-              <li>Create the primary administrator account.</li>
-              <li>Choose the service tier that meets your needs.</li>
-              <li>Submit and wait for activation confirmation.</li>
+            <ol class="step-list numbered-steps">
+              <li>Enter the legal organization name, address, and primary contact details.</li>
+              <li>Add the primary administrator account and verify the email address.</li>
+              <li>Choose the service tier, storage limits, and user count.</li>
+              <li>Upload any required compliance documents or IDs.</li>
+              <li>Submit the request and await activation confirmation.</li>
             </ol>
           </div>
         </div>
@@ -244,13 +346,22 @@
           <div class="col-lg-6 order-lg-1">
             <h3 class="h5">Secure Login & Password Policies</h3>
             <p>Access the system through a secure portal and follow password rules to protect your account.</p>
-            <ol class="step-list">
-              <li>Open your organization's login URL.</li>
+            <ol class="step-list numbered-steps">
+              <li>Open your organization's login URL in a supported browser.</li>
               <li>Enter your registered email and temporary password.</li>
-              <li>Set a new secure password with mixed character types.</li>
-              <li>Log in and confirm your profile settings.</li>
+              <li>Create a new password using uppercase, lowercase, numbers, and symbols.</li>
+              <li>Enable multi-factor authentication if prompted.</li>
+              <li>Log in and confirm your profile settings and notifications.</li>
             </ol>
           </div>
+        </div>
+        <div class="tip-card p-3 mt-4">
+          <h4 class="h6 text-primary mb-2">Tips for first-time users</h4>
+          <ul class="step-list mb-0">
+            <li>Bookmark the login URL and add the support email to your contacts.</li>
+            <li>Save recovery codes in a secure password manager.</li>
+            <li>Complete your profile photo to help approvers identify requests.</li>
+          </ul>
         </div>
       </section>
 
@@ -270,11 +381,11 @@
             <h3 class="h5">Administrator Dashboard</h3>
             <p>Use the dashboard as the control center for workflow health, document counts, and quick action shortcuts.
             </p>
-            <ul class="step-list">
-              <li>Monitor incoming, pending, and completed documents.</li>
-              <li>Track workflow bottlenecks and overdue tasks.</li>
-              <li>See alerts for usage and license limits.</li>
-            </ul>
+            <ol class="step-list numbered-steps">
+              <li>Review the dashboard tiles for incoming, pending, and completed documents.</li>
+              <li>Open overdue queues to prioritize stalled workflows.</li>
+              <li>Check storage and license alerts before capacity runs low.</li>
+            </ol>
           </div>
         </div>
         <div class="row g-4 align-items-center mt-4">
@@ -285,12 +396,19 @@
           <div class="col-lg-6 order-lg-1">
             <h3 class="h5">Subscription & Profile Settings</h3>
             <p>Manage service tiers and user preferences from the account settings area.</p>
-            <ul class="step-list">
-              <li>Review current plan and storage usage.</li>
-              <li>Upgrade or adjust subscription tiers as needed.</li>
-              <li>Update personal profile data and notification preferences.</li>
-            </ul>
+            <ol class="step-list numbered-steps">
+              <li>Review the current plan, storage usage, and renewal dates.</li>
+              <li>Upgrade or downgrade tiers based on your workflow volume.</li>
+              <li>Update profile information, signatures, and notification settings.</li>
+            </ol>
           </div>
+        </div>
+        <div class="tip-card p-3 mt-4">
+          <h4 class="h6 text-primary mb-2">Tips for admins</h4>
+          <ul class="step-list mb-0">
+            <li>Schedule weekly dashboard reviews to spot overdue items early.</li>
+            <li>Export usage reports before budgeting or renewal meetings.</li>
+          </ul>
         </div>
       </section>
 
@@ -308,11 +426,11 @@
           <div class="col-lg-8">
             <h3 class="h5">Managing Users</h3>
             <p>Create, update, or suspend users from the user directory while maintaining secure access control.</p>
-            <ul class="step-list">
-              <li>Invite new users with assigned roles.</li>
-              <li>Suspend accounts when personnel change roles or leave.</li>
-              <li>Update user details and permissions as needed.</li>
-            </ul>
+            <ol class="step-list numbered-steps">
+              <li>Invite new users and assign the correct role for their responsibilities.</li>
+              <li>Verify email activation before granting access to sensitive records.</li>
+              <li>Suspend or deactivate accounts when personnel change roles or leave.</li>
+            </ol>
           </div>
         </div>
         <div class="row g-4 align-items-center mt-4">
@@ -324,11 +442,11 @@
             <h3 class="h5">Creating Functional Teams</h3>
             <p>Group users into teams such as Finance or Legal so documents can be routed collectively and processed
               faster.</p>
-            <ul class="step-list">
-              <li>Define team names and member assignments.</li>
-              <li>Route documents to teams rather than individuals.</li>
-              <li>Enable team members to claim and process items.</li>
-            </ul>
+            <ol class="step-list numbered-steps">
+              <li>Define team names that match your organization structure.</li>
+              <li>Assign members and designate team leads for approvals.</li>
+              <li>Route documents to teams so anyone can claim and process items.</li>
+            </ol>
           </div>
         </div>
         <div class="row g-4 align-items-center mt-4">
@@ -340,12 +458,19 @@
             <h3 class="h5">Roles & RBAC Matrix</h3>
             <p>Assign granular permissions to roles to protect sensitive documents and enforce the principle of least
               privilege.</p>
-            <ul class="step-list">
-              <li>Use Admin, Encoder, Approver, and Viewer permissions.</li>
+            <ol class="step-list numbered-steps">
+              <li>Start with Admin, Encoder, Approver, and Viewer permissions.</li>
               <li>Customize access to upload, edit, approve, and archive actions.</li>
-              <li>Review role assignments regularly for compliance.</li>
-            </ul>
+              <li>Review role assignments quarterly for compliance.</li>
+            </ol>
           </div>
+        </div>
+        <div class="tip-card p-3 mt-4">
+          <h4 class="h6 text-primary mb-2">Access management tips</h4>
+          <ul class="step-list mb-0">
+            <li>Keep a short approval chain for faster turnaround.</li>
+            <li>Enable least-privilege defaults for new users and teams.</li>
+          </ul>
         </div>
       </section>
 
@@ -363,11 +488,11 @@
           <div class="col-lg-7">
             <h3 class="h5">Category Management</h3>
             <p>Establish a logical taxonomy before upload so documents remain searchable and easy to manage.</p>
-            <ul class="step-list">
+            <ol class="step-list numbered-steps">
               <li>Define categories such as Invoices, Contracts, and Records.</li>
-              <li>Attach metadata that matches business and compliance needs.</li>
-              <li>Keep the repository consistent for audits and retrieval.</li>
-            </ul>
+              <li>Set mandatory metadata fields that match compliance requirements.</li>
+              <li>Review categories quarterly to keep the taxonomy consistent.</li>
+            </ol>
           </div>
         </div>
         <div class="row g-4 align-items-center mt-4">
@@ -378,9 +503,10 @@
           <div class="col-lg-6 order-lg-1">
             <h3 class="h5">Uploading & OCR Processing</h3>
             <p>Upload documents easily and let OCR automatically extract text for full searchability.</p>
-            <ol class="step-list">
+            <ol class="step-list numbered-steps">
               <li>Open the Documents module and click Create Document.</li>
-              <li>Upload the file, then enter title, category, and description.</li>
+              <li>Upload the file, then enter the title, category, and description.</li>
+              <li>Confirm OCR language settings and processing options.</li>
               <li>Save to generate tracking numbers and QR codes automatically.</li>
             </ol>
           </div>
@@ -393,11 +519,11 @@
           <div class="col-lg-6">
             <h3 class="h5">Search & Retrieval</h3>
             <p>Search documents using OCR text, metadata, or document properties for fast retrieval.</p>
-            <ul class="step-list">
-              <li>Run keyword queries across titles and document contents.</li>
+            <ol class="step-list numbered-steps">
+              <li>Run keyword queries across titles, metadata, and OCR text.</li>
               <li>Filter by category, status, date range, or owner.</li>
               <li>Open document details directly from search results.</li>
-            </ul>
+            </ol>
           </div>
         </div>
         <div class="row g-4 align-items-center mt-4">
@@ -408,12 +534,19 @@
           <div class="col-lg-6 order-lg-1">
             <h3 class="h5">Detailed View & Versioning</h3>
             <p>Open any document to see its full metadata, history, and version updates in one place.</p>
-            <ul class="step-list">
+            <ol class="step-list numbered-steps">
               <li>Preview the document content and metadata side-by-side.</li>
-              <li>See version history and revision notes.</li>
+              <li>Review version history, revision notes, and approvals.</li>
               <li>Track when the document was archived or moved.</li>
-            </ul>
+            </ol>
           </div>
+        </div>
+        <div class="tip-card p-3 mt-4">
+          <h4 class="h6 text-primary mb-2">Repository tips</h4>
+          <ul class="step-list mb-0">
+            <li>Standardize titles with dates or project codes for faster search.</li>
+            <li>Attach supporting files (spreadsheets, receipts) during upload.</li>
+          </ul>
         </div>
       </section>
 
@@ -435,6 +568,7 @@
               <li><strong>Sequential:</strong> Document flows from one approver to the next.</li>
               <li><strong>Parallel:</strong> Multiple reviewers receive the document simultaneously.</li>
               <li>Use sequential routing for strict approval chains and parallel routing for faster reviews.</li>
+              <li>Set deadlines based on regulatory or internal SLAs.</li>
             </ul>
           </div>
         </div>
@@ -445,10 +579,11 @@
           </div>
           <div class="col-lg-6 order-lg-1">
             <h3 class="h5">Initiating a Workflow</h3>
-            <ol class="step-list">
+            <ol class="step-list numbered-steps">
               <li>Select the document and choose your routing strategy.</li>
               <li>Pick approvers or teams responsible for the next step.</li>
               <li>Add notes, deadlines, and any required instructions.</li>
+              <li>Attach supporting files or policy references.</li>
               <li>Start the workflow and track its progress in the queue.</li>
             </ol>
           </div>
@@ -475,6 +610,13 @@
             <li><strong>Completed:</strong> Workflow items already finished and archived.</li>
           </ul>
         </div>
+        <div class="tip-card p-3 mt-4">
+          <h4 class="h6 text-primary mb-2">Workflow tips</h4>
+          <ul class="step-list mb-0">
+            <li>Use parallel routing for routine approvals to avoid delays.</li>
+            <li>Send reminders before deadlines to keep queues moving.</li>
+          </ul>
+        </div>
       </section>
 
       <section id="tracking" class="mb-5">
@@ -492,11 +634,11 @@
           <div class="col-lg-6">
             <h3 class="h5">Real-Time Tracking</h3>
             <p>See current document location, assigned reviewers, and timing details in a single timeline.</p>
-            <ul class="step-list">
+            <ol class="step-list numbered-steps">
               <li>Monitor which team or user currently holds a document.</li>
               <li>Track status changes and timestamps at every step.</li>
               <li>Use QR codes to connect physical files with digital records.</li>
-            </ul>
+            </ol>
           </div>
         </div>
         <div class="row g-4 align-items-center mt-4">
@@ -508,35 +650,187 @@
             <h3 class="h5">Audit Trails & Reporting</h3>
             <p>Every action is logged so organizations can generate compliance reports and investigate issues quickly.
             </p>
-            <ul class="step-list">
+            <ol class="step-list numbered-steps">
               <li>Log views, edits, approvals, and archival actions.</li>
               <li>Generate audit reports for review and compliance checks.</li>
               <li>Retrieve historical document movement for accountability.</li>
-            </ul>
+            </ol>
+          </div>
+        </div>
+        <div class="tip-card p-3 mt-4">
+          <h4 class="h6 text-primary mb-2">Compliance tips</h4>
+          <ul class="step-list mb-0">
+            <li>Schedule monthly audit exports for record retention.</li>
+            <li>Use consistent naming on archived files for easy retrieval.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="tips-troubleshooting" class="mb-5">
+        <div class="section-header mb-3">
+          <span class="badge bg-primary mb-2">Chapter 8</span>
+          <h2 class="h3 mb-1">Tips & Troubleshooting</h2>
+          <p class="text-muted mb-0">Keep daily operations smooth with quick tips, reminders, and fixes for common
+            issues.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="p-4 rounded-4 bg-white border h-100 shadow-sm">
+              <h3 class="h5">Quick Reference</h3>
+              <ol class="step-list numbered-steps">
+                <li>Verify category and metadata before uploading.</li>
+                <li>Use team routing for faster review cycles.</li>
+                <li>Keep role assignments current to avoid access issues.</li>
+                <li>Archive completed workflows at the end of each week.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="p-4 rounded-4 bg-white border h-100 shadow-sm">
+              <h3 class="h5">Troubleshooting</h3>
+              <ol class="step-list numbered-steps">
+                <li><strong>Login problems:</strong> clear cache and reset your password.</li>
+                <li><strong>Upload errors:</strong> confirm file type and size, then retry.</li>
+                <li><strong>Search returns none:</strong> broaden your search terms.</li>
+                <li><strong>Status is incorrect:</strong> refresh and review workflow history.</li>
+              </ol>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="row g-4">
-        <div class="col-lg-6">
-          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm">
-            <h3 class="h5">Quick Reference</h3>
-            <ul class="step-list">
-              <li>Verify category and metadata before uploading.</li>
-              <li>Use team routing for faster review cycles.</li>
-              <li>Keep role assignments current to avoid access issues.</li>
-            </ul>
-          </div>
+      <section id="screenshot-reference" class="mb-5">
+        <div class="section-header mb-3">
+          <span class="badge bg-primary mb-2">Chapter 9</span>
+          <h2 class="h3 mb-1">Screenshot Reference</h2>
+          <p class="text-muted mb-0">All screenshots used in this booklet are listed below for quick scanning and print
+            verification.</p>
         </div>
-        <div class="col-lg-6">
-          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm">
-            <h3 class="h5">Troubleshooting</h3>
-            <ul class="step-list">
-              <li><strong>Login problems:</strong> clear cache and reset your password.</li>
-              <li><strong>Upload errors:</strong> confirm file type and size, then retry.</li>
-              <li><strong>Search returns none:</strong> broaden your search terms.</li>
-              <li><strong>Status is incorrect:</strong> refresh and review workflow history.</li>
-            </ul>
+        <div class="row g-4 screenshot-grid">
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/signuppage.jpg" alt="Organization registration screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Organization registration</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/loginpage.jpg" alt="Secure login portal" class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Secure login portal</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/companyadmindashboard(avail).jpg" alt="Administrator dashboard screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Administrator dashboard</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/managesubscription.jpg" alt="Subscription management screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Subscription management</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/usermanagement.jpg" alt="User management screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>User management</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/teammanagement.jpg" alt="Team management screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Team management</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/rolemanagement.jpg" alt="Role management screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Role management</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/documentcategory.jpg" alt="Category management screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Category management</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/createdocument.jpg" alt="Document upload screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Document upload</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/documentmanagement.jpg" alt="Document search screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Document search</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/viewdocumentdetails.jpg" alt="Document detailed view screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Document detailed view</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/forwardsequentialprocessing.jpg" alt="Sequential routing screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Sequential routing</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/forwardparallelprocessing.jpg" alt="Parallel routing screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Parallel routing</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/workflowdashboardtorecieve.jpg" alt="To receive queue screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>To receive queue</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/workflowdashboardpending.jpg" alt="Pending queue screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Pending queue</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/workflowdashboardcompleted.jpg" alt="Completed queue screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Completed queue</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/audittracking.jpg" alt="Audit tracking screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Audit tracking</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="mb-0">
+              <img src="../assets/auditreportmanagement.jpg" alt="Audit report screenshot"
+                class="img-fluid rounded-4 shadow-sm border" />
+              <figcaption>Audit reporting</figcaption>
+            </figure>
           </div>
         </div>
       </section>
