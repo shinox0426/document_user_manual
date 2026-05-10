@@ -102,8 +102,8 @@
     }
 
     .page-break {
-      break-after: page;
-      page-break-after: always;
+      break-before: page;
+      page-break-before: always;
     }
 
     .toc-section .toc-list {
@@ -172,7 +172,7 @@
           <p class="text-uppercase text-primary fw-bold mb-2 small">User Manual</p>
           <h1 class="display-6 mb-2">Document Tracking & Archiving System</h1>
           <p class="text-secondary mb-0">This booklet guide now includes a cover page, table of contents, expanded
-            chapter-by-chapter steps, tips, and a full screenshot reference.</p>
+            chapter-by-chapter steps, tips, hardware requirements, and a full screenshot reference.</p>
         </div>
       <div class="d-flex gap-2 flex-wrap">
         <a href="download.php" class="btn btn-primary btn-lg">Download PDF</a>
@@ -218,14 +218,15 @@
         </div>
         <nav class="toc-list">
           <a href="#overview">Chapter 1: System Overview</a>
-          <a href="#getting-started">Chapter 2: Getting Started</a>
-          <a href="#command-center">Chapter 3: Command Center</a>
-          <a href="#access-management">Chapter 4: Access Management</a>
-          <a href="#repository">Chapter 5: Digital Repository</a>
-          <a href="#workflows">Chapter 6: Intelligent Workflows</a>
-          <a href="#tracking">Chapter 7: Tracking & Compliance</a>
-          <a href="#tips-troubleshooting">Chapter 8: Tips & Troubleshooting</a>
-          <a href="#screenshot-reference">Chapter 9: Screenshot Reference</a>
+          <a href="#hardware-requirements">Chapter 2: Hardware & Environment Requirements</a>
+          <a href="#getting-started">Chapter 3: Getting Started</a>
+          <a href="#command-center">Chapter 4: Command Center</a>
+          <a href="#access-management">Chapter 5: Access Management</a>
+          <a href="#repository">Chapter 6: Digital Repository</a>
+          <a href="#workflows">Chapter 7: Intelligent Workflows</a>
+          <a href="#tracking">Chapter 8: Tracking & Compliance</a>
+          <a href="#tips-troubleshooting">Chapter 9: Tips & Troubleshooting</a>
+          <a href="#screenshot-reference">Chapter 10: Screenshot Reference</a>
         </nav>
       </section>
 
@@ -238,6 +239,7 @@
                 chapter pairs screenshots with step-by-step actions and ends with a checklist of tips.</p>
               <ul class="feature-list mb-0">
                 <li><strong>System overview:</strong> purpose, capabilities, and requirements.</li>
+                <li><strong>Hardware readiness:</strong> devices, scanners, printers, and network stability.</li>
                 <li><strong>Getting started:</strong> homepage, registration, and login policies.</li>
                 <li><strong>Command center:</strong> dashboard, subscriptions, and profile settings.</li>
                 <li><strong>Access control:</strong> users, teams, and roles.</li>
@@ -254,21 +256,22 @@
                 <a href="#cover">Cover Page</a>
                 <a href="#table-of-contents">Table of Contents</a>
                 <a href="#overview">1. System Overview</a>
-                <a href="#getting-started">2. Getting Started</a>
-                <a href="#command-center">3. Command Center</a>
-                <a href="#access-management">4. Access Management</a>
-                <a href="#repository">5. Digital Repository</a>
-                <a href="#workflows">6. Workflows</a>
-                <a href="#tracking">7. Tracking & Compliance</a>
-                <a href="#tips-troubleshooting">8. Tips & Troubleshooting</a>
-                <a href="#screenshot-reference">9. Screenshot Reference</a>
+                <a href="#hardware-requirements">2. Hardware & Environment</a>
+                <a href="#getting-started">3. Getting Started</a>
+                <a href="#command-center">4. Command Center</a>
+                <a href="#access-management">5. Access Management</a>
+                <a href="#repository">6. Digital Repository</a>
+                <a href="#workflows">7. Workflows</a>
+                <a href="#tracking">8. Tracking & Compliance</a>
+                <a href="#tips-troubleshooting">9. Tips & Troubleshooting</a>
+                <a href="#screenshot-reference">10. Screenshot Reference</a>
               </nav>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="overview" class="mb-5">
+      <section id="overview" class="mb-5 page-break">
         <div class="section-header mb-3">
           <span class="badge bg-primary mb-2">Chapter 1</span>
           <h2 class="h3 mb-1">System Overview</h2>
@@ -314,9 +317,62 @@
         </div>
       </section>
 
-      <section id="getting-started" class="mb-5">
+      <section id="hardware-requirements" class="mb-5 page-break">
         <div class="section-header mb-3">
           <span class="badge bg-primary mb-2">Chapter 2</span>
+          <h2 class="h3 mb-1">Hardware & Environment Requirements</h2>
+          <p class="text-muted mb-0">Prepare devices, peripherals, and connectivity for smooth daily processing.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="section-card p-4 h-100">
+              <h3 class="h5">Primary Workstation Specs</h3>
+              <ul class="step-list">
+                <li>Processor: Intel i5/Ryzen 5 (or higher) for multi-tab workflows.</li>
+                <li>Memory: 8 GB RAM minimum; 16 GB recommended for large uploads.</li>
+                <li>Storage: 20 GB free space for temporary uploads and exports.</li>
+                <li>Display: 1920×1080 resolution or higher for dashboards.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="section-card p-4 h-100">
+              <h3 class="h5">Peripherals & Network</h3>
+              <ul class="step-list">
+                <li>Document scanner with duplex capability for bulk intake.</li>
+                <li>PDF printer access for approvals and barcode labels.</li>
+                <li>Stable broadband (10 Mbps+ per active user) with backup hotspot.</li>
+                <li>UPS or surge protection for critical scanning stations.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 align-items-center mt-4">
+          <div class="col-lg-6">
+            <h3 class="h5">Readiness Checklist</h3>
+            <ol class="step-list numbered-steps">
+              <li>Test scanner drivers and confirm OCR-ready output.</li>
+              <li>Validate network upload speeds with a sample 20-page PDF.</li>
+              <li>Confirm browser pop-ups and download locations for exports.</li>
+              <li>Assign shared printers and label printers to workflow teams.</li>
+            </ol>
+          </div>
+          <div class="col-lg-6">
+            <div class="tip-card p-3">
+              <h4 class="h6 text-primary mb-2">Tips</h4>
+              <ul class="step-list mb-0">
+                <li>Keep a dedicated staging PC for bulk scanning.</li>
+                <li>Schedule monthly hardware maintenance for scanners.</li>
+                <li>Use wired connections for upload-heavy teams.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="getting-started" class="mb-5 page-break">
+        <div class="section-header mb-3">
+          <span class="badge bg-primary mb-2">Chapter 3</span>
           <h2 class="h3 mb-1">Getting Started</h2>
           <p class="text-muted mb-0">Complete the initial registration and secure login process before working with
             documents.</p>
@@ -365,9 +421,9 @@
         </div>
       </section>
 
-      <section id="command-center" class="mb-5">
+      <section id="command-center" class="mb-5 page-break">
         <div class="section-header mb-3">
-          <span class="badge bg-primary mb-2">Chapter 3</span>
+          <span class="badge bg-primary mb-2">Chapter 4</span>
           <h2 class="h3 mb-1">Command Center</h2>
           <p class="text-muted mb-0">Manage the organization from the dashboard, including subscription and profile
             settings.</p>
@@ -412,9 +468,9 @@
         </div>
       </section>
 
-      <section id="access-management" class="mb-5">
+      <section id="access-management" class="mb-5 page-break">
         <div class="section-header mb-3">
-          <span class="badge bg-primary mb-2">Chapter 4</span>
+          <span class="badge bg-primary mb-2">Chapter 5</span>
           <h2 class="h3 mb-1">Identity & Access Management</h2>
           <p class="text-muted mb-0">Define users, teams, and roles so the right people handle the right documents.</p>
         </div>
@@ -474,9 +530,9 @@
         </div>
       </section>
 
-      <section id="repository" class="mb-5">
+      <section id="repository" class="mb-5 page-break">
         <div class="section-header mb-3">
-          <span class="badge bg-primary mb-2">Chapter 5</span>
+          <span class="badge bg-primary mb-2">Chapter 6</span>
           <h2 class="h3 mb-1">Digital Repository</h2>
           <p class="text-muted mb-0">Organize documents for fast retrieval and accurate long-term storage.</p>
         </div>
@@ -550,9 +606,9 @@
         </div>
       </section>
 
-      <section id="workflows" class="mb-5">
+      <section id="workflows" class="mb-5 page-break">
         <div class="section-header mb-3">
-          <span class="badge bg-primary mb-2">Chapter 6</span>
+          <span class="badge bg-primary mb-2">Chapter 7</span>
           <h2 class="h3 mb-1">Intelligent Workflows</h2>
           <p class="text-muted mb-0">Control document routing through sequential and parallel workflows with clear queue
             management.</p>
@@ -619,9 +675,9 @@
         </div>
       </section>
 
-      <section id="tracking" class="mb-5">
+      <section id="tracking" class="mb-5 page-break">
         <div class="section-header mb-3">
-          <span class="badge bg-primary mb-2">Chapter 7</span>
+          <span class="badge bg-primary mb-2">Chapter 8</span>
           <h2 class="h3 mb-1">Tracking & Compliance</h2>
           <p class="text-muted mb-0">Review document status, audit history, and archiving rules for compliance
             oversight.</p>
@@ -666,9 +722,9 @@
         </div>
       </section>
 
-      <section id="tips-troubleshooting" class="mb-5">
+      <section id="tips-troubleshooting" class="mb-5 page-break">
         <div class="section-header mb-3">
-          <span class="badge bg-primary mb-2">Chapter 8</span>
+          <span class="badge bg-primary mb-2">Chapter 9</span>
           <h2 class="h3 mb-1">Tips & Troubleshooting</h2>
           <p class="text-muted mb-0">Keep daily operations smooth with quick tips, reminders, and fixes for common
             issues.</p>
@@ -699,9 +755,9 @@
         </div>
       </section>
 
-      <section id="screenshot-reference" class="mb-5">
+      <section id="screenshot-reference" class="mb-5 page-break">
         <div class="section-header mb-3">
-          <span class="badge bg-primary mb-2">Chapter 9</span>
+          <span class="badge bg-primary mb-2">Chapter 10</span>
           <h2 class="h3 mb-1">Screenshot Reference</h2>
           <p class="text-muted mb-0">All screenshots used in this booklet are listed below for quick scanning and print
             verification.</p>
